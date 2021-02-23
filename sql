@@ -1,6 +1,6 @@
 create table restoraunt_info(id serial,
 	                         name varchar(200) not null,
-				 delivery char(1) not null,
+				 has_delivery boolean not null,
 				 link_to_site varchar(200),
 				 count_of_employers int,
 				 is_alcohol_allowed boolean,
