@@ -1,4 +1,4 @@
-package ua.com.restoraunt.controllers;
+package ua.restoraunt.controllers;
 
 public class RestorauntController {
 }

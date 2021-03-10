@@ -1,4 +1,4 @@
-package ua.com.restoraunt.domain;
+package ua.restoraunt.domain;
 
 public class Menu {
 }

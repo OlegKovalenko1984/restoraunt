@@ -1,4 +1,4 @@
-package ua.com.restoraunt.repositories;
+package ua.restoraunt.repositories;
 
 public interface RestorauntRepository {
 }
