@@ -8,16 +8,16 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Restoraunt {
-    private int id;
+    private Integer id;
     private String name;
-    private boolean hasDelivery;
+    private Boolean hasDelivery;
     private String linkToSite;
-    private int countOfEmployers;
-    private boolean isAlcoholAllowed;
-    private boolean hasSummerPlatform;
+    private Integer countOfEmployers;
+    private Boolean isAlcoholAllowed;
+    private Boolean hasSummerPlatform;
     private String timeOfWork;
 
-    public Restoraunt(String name, boolean hasDelivery, String linkToSite, int countOfEmployers, boolean isAlcoholAllowed, boolean hasSummerPlatform, String timeOfWork) {
+    public Restoraunt(String name, Boolean hasDelivery, String linkToSite, Integer countOfEmployers, Boolean isAlcoholAllowed, Boolean hasSummerPlatform, String timeOfWork) {
         this.name = name;
         this.hasDelivery = hasDelivery;
         this.linkToSite = linkToSite;

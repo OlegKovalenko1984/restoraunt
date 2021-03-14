@@ -22,7 +22,7 @@ public class MenuImpl implements Repository<Menu> {
 
 
     @Override
-    public long create(Menu entity) {
+    public Menu create(Menu entity) {
         GeneratedKeyHolder generatedKeyHolder = new GeneratedKeyHolder();
 
         jdbcTemplate.update(con -> {
@@ -35,7 +35,7 @@ public class MenuImpl implements Repository<Menu> {
             ps.setDouble(5, entity.getTimeOfCooking());
             return ps;
         }, generatedKeyHolder);
-        return 0;
+        return null;
     }
 
     @Override
@@ -45,7 +45,7 @@ public class MenuImpl implements Repository<Menu> {
     }
 
     @Override
-    public long update(Menu entity) {
+    public Menu update(Menu entity) {
         GeneratedKeyHolder generatedKeyHolder = new GeneratedKeyHolder();
 
         jdbcTemplate.update(con -> {
@@ -60,7 +60,7 @@ public class MenuImpl implements Repository<Menu> {
             ps.setInt(6, entity.getId());
             return ps;
         }, generatedKeyHolder);
-        return 0;
+        return null;
     }
 
     @Override

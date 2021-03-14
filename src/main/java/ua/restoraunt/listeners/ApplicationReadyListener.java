@@ -27,19 +27,19 @@ public class ApplicationReadyListener {
     @EventListener(ApplicationReadyEvent.class)
     public void readyHandler() {
         Restoraunt restoraunt = restorauntRepository.get(1);
-        Menu menu = menuRepository.get(3);
+        Menu menu = menuRepository.get(2);
         List<Restoraunt> restorauntList = restorauntRepository.getAll();
         List<Menu> menuList = menuRepository.getAll();
 
-        restorauntRepository.create(new Restoraunt(
-                "Просто бар",
-                true,
-                "http://prostobar.com",
-                3,
-                true,
-                false,
-                "10.00-24.00"));
-
+//        restorauntRepository.create(new Restoraunt(
+//                "Просто бар",
+//                true,
+//                "http://prostobar.com",
+//                3,
+//                true,
+//                false,
+//                "10.00-24.00"));
+//
         restorauntRepository.update(new Restoraunt(14,
                 "бар Фазан",
                 true,
@@ -49,15 +49,15 @@ public class ApplicationReadyListener {
                 false,
                 "10.00-24.00"));
 
-        restorauntRepository.delete(14);
+//        restorauntRepository.delete(14);
 
         log.info("Info - {}", restoraunt);
         log.info("All Info - {}", restorauntList);
 
 
-        menuRepository.update(new Menu(3, 1, "Сало", 150.0, 1.0, 10.0));
-        menuRepository.create(new Menu(14, "Вискарик", 350.2, 0.5, 1.0));
-        menuRepository.delete(3);
+//        menuRepository.update(new Menu(3, 1, "Сало", 150.0, 1.0, 10.0));
+//        menuRepository.create(new Menu(14, "Вискарик", 350.2, 0.5, 1.0));
+//        menuRepository.delete(3);
 
         log.info("Menu -> {}", menu);
         log.info("AllMenu -> {}", menuList);

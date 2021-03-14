@@ -22,22 +22,23 @@ public class RestorauntImpl implements Repository<Restoraunt> {
     }
 
     @Override
-    public long create(Restoraunt entity) {
+    public Restoraunt create(Restoraunt entity) {
         GeneratedKeyHolder generatedKeyHolder = new GeneratedKeyHolder();
 
         jdbcTemplate.update(con -> {
-            PreparedStatement ps = con.prepareStatement("insert into restoraunt_info(name,has_delivery,link_to_site,count_of_employers,is_alcohol_allowed,has_summer_platform, time_of_work) " +
+            PreparedStatement ps = con.prepareStatement(
+                    "insert into restoraunt_info(name,has_delivery,link_to_site,count_of_employers,is_alcohol_allowed,has_summer_platform, time_of_work) " +
                     "values (?,?,?,?,?,?,?)");
             ps.setString(1, entity.getName());
-            ps.setBoolean(2, entity.isHasDelivery());
+            ps.setBoolean(2, entity.getHasDelivery());
             ps.setString(3, entity.getLinkToSite());
             ps.setInt(4, entity.getCountOfEmployers());
-            ps.setBoolean(5, entity.isAlcoholAllowed());
-            ps.setBoolean(6, entity.isHasSummerPlatform());
+            ps.setBoolean(5, entity.getIsAlcoholAllowed());
+            ps.setBoolean(6, entity.getHasSummerPlatform());
             ps.setString(7, entity.getTimeOfWork());
             return ps;
         }, generatedKeyHolder);
-        return 0;
+        return entity;
     }
 
     @Override
@@ -47,7 +48,7 @@ public class RestorauntImpl implements Repository<Restoraunt> {
     }
 
     @Override
-    public long update(Restoraunt entity) {
+    public Restoraunt update(Restoraunt entity) {
         GeneratedKeyHolder generatedKeyHolder = new GeneratedKeyHolder();
 
         jdbcTemplate.update(con -> {
@@ -57,16 +58,16 @@ public class RestorauntImpl implements Repository<Restoraunt> {
                     " is_alcohol_allowed = ?,has_summer_platform = ?, time_of_work = ? " +
                     "where id = ?");
             ps.setString(1, entity.getName());
-            ps.setBoolean(2, entity.isHasDelivery());
+            ps.setBoolean(2, entity.getHasDelivery());
             ps.setString(3, entity.getLinkToSite());
             ps.setInt(4, entity.getCountOfEmployers());
-            ps.setBoolean(5, entity.isAlcoholAllowed());
-            ps.setBoolean(6, entity.isHasSummerPlatform());
+            ps.setBoolean(5, entity.getIsAlcoholAllowed());
+            ps.setBoolean(6, entity.getHasSummerPlatform());
             ps.setString(7, entity.getTimeOfWork());
             ps.setInt(8, entity.getId());
             return ps;
         }, generatedKeyHolder);
-        return 0;
+        return entity;
     }
 
     @Override
